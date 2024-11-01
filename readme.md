@@ -21,7 +21,7 @@ Pour cette vulnérabilité, nous pouvons metrre en place un mécanisme qui véri
 -Vulnérabilité:
 Cette version d'active_mq n'effectue pas une classification (Vérifiaction de la source d'une donnée) de données avant de le mettre à la dispostion d'autres utilisateurs.
 
--Solutions;
+-Solutions:
 Utiliser un Safe Constructor : Si vous utilisez des bibliothèques comme SnakeYaml pour traiter les messages, optez pour un Safe Constructor qui limite les types d'objets qui peuvent être créés lors de la désérialisation.
 Configurer les permissions : Limitez les permissions des utilisateurs et des applications qui peuvent accéder aux files d'attente pour réduire les risques d'attaques.
 
@@ -30,5 +30,5 @@ Configurer les permissions : Limitez les permissions des utilisateurs et des app
 -Vulnérabilité:
 Controles d'accès au site
 
--Solutions:
+-Solution:
 La solution à cette vulnérabilité peut être la mise en place d'u système d'authentifiaction pour les différents accès.
