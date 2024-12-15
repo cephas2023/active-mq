@@ -1,34 +1,19 @@
 --ACTIVE MQ--
 
---CVE_2015--
 
--Vulnérabilité:
-Cette version d'active_mq contient deux vulnérabilités assez remarquables qui sont l'absence d'une authentifiaction pour l'accès au site et le fait de pouvoir y insérer plusieurs types de données.
+ActiveMQ est une solution de messagerie open source, développée par la fondation Apache, qui permet de faciliter la communication entre des applications, systèmes, ou services distribués. Grâce à son support de protocoles variés et à sa flexibilité, ActiveMQ est utilisé dans de nombreux environnements pour échanger des messages de manière fiable et scalable.
 
--Solution:
-Mettre en place un système d'authentification et/ou de vérifiaction des inputs afin d'éviter les injections SQL etc...
+--Fonctionnalités principales--
+Support multi-protocole : Compatibilité avec JMS, MQTT, AMQP, STOMP, et plus.
 
---CVE_2016--
+Modèles de messagerie : Point-à-point (queues) : un émetteur et un récepteur unique pour chaque message.
 
--Vulnérabilté:
-Cette version d'active_mq ne neutralise pas ou neutralise de manière incorrecte les entrées de données par l'utilisateur avant qu'elles ne soient misent dans une sortie utilisée comme page web servie à d'autres utilisateurs.
+Publication/Abonnement (topics) : diffusion de messages à plusieurs abonnés.
 
--Solution:
-Pour cette vulnérabilité, nous pouvons metrre en place un mécanisme qui vérifie les données qu'envoie l'utilisateur, cette solution rejoint un peu celle proposée pour la CVE_2015
+Persistance des messages : Les messages sont sauvegardés jusqu'à leur livraison pour éviter les pertes.
 
---CVE_2022--:
+Scalabilité : Gestion de gros volumes de messages avec des options pour le clustering et le load balancing.
 
--Vulnérabilité:
-Cette version d'active_mq n'effectue pas une classification (Vérifiaction de la source d'une donnée) de données avant de le mettre à la dispostion d'autres utilisateurs.
+Sécurité : Authentification, autorisation, et chiffrement des connexions via TLS.
 
--Solutions:
-Utiliser un Safe Constructor : Si vous utilisez des bibliothèques comme SnakeYaml pour traiter les messages, optez pour un Safe Constructor qui limite les types d'objets qui peuvent être créés lors de la désérialisation.
-Configurer les permissions : Limitez les permissions des utilisateurs et des applications qui peuvent accéder aux files d'attente pour réduire les risques d'attaques.
-
---CVE_2023--
-
--Vulnérabilité:
-Controles d'accès au site
-
--Solution:
-La solution à cette vulnérabilité peut être la mise en place d'u système d'authentifiaction pour les différents accès.
+Cependant, ses versions de 2015,2016,2022,2023 ont des vulnérabilités que nous allons étudier.
